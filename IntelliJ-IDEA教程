@@ -1,0 +1,276 @@
+IDEA常用快捷键
+
+1
+声明一下，以下快捷键都是在Mac下的，Windows下的话，会有些不同，请参照Windows版IDEA的keymap文档。
+一些技巧：
+
+1
+在任何时候，按下alt键，界面上的菜单字符中有些会有下划线，这时用alt+下划线即是执行这个菜单功能的快捷键。
+2
+可自定义一些快捷键，避免使用鼠标。IDEA支持宏，不过我用得不多，只用过那么一两次，使用起来也很简单。
+一、视图切换快捷键
+
+1
+1、各视图区域的切换 cmd + 视图区域对应的数字
+2
+2、切换到maven的视图 alt + m
+3
+3、装了switchTab插件后，按下ctrl+tab后会得到可切换的区域列表
+4
+4、cmd+e                 列出最近查看的文件列表
+5
+5、shift + cmd + e   最近修改文件列表
+6
+上面两个键在开发过程中非常有用。
+二、搜索快捷键
+
+1
+IDEA的搜索非常强大，可秒杀eclipse.在project,maven等视图及出现列表的场景下，直接输入字符即开始搜索，可以说搜索无处不在。
+2
+1、在编辑文档中，cmd+f 开始搜索 cmd + r 搜索替换
+3
+2、在project中，按下ctrl + shift + f(r) 即是在当前目前下递归查找或替换,搜索出来后，要全部替换，按下alt + a
+4
+3、alt + F7      搜索对象被引用的地方
+5
+4、cmd + F7   搜索对象在当前文件被引用的地方
+6
+5、cmd + n     查找类
+7
+6、shift + cmd + n  查找文件
+8
+上面两个查找都支持简单的正则表达式，还支持直接按大写字母的缩略查找如JsonTranscoder,只需要输入JT
+三、编辑代码的快捷键
+
+01
+cmd + j                 调出IDEA的神器live template，你懂的
+02
+ctrl + n                各种自动生成代码，创建文件，生成set get override…
+03
+alt + enter           调出IDEA对出错点的提示处理方法，熟练使用可使你写代码的速度提升5倍
+04
+cmd + D              复制粘贴当前行到下一行
+05
+cmd + c|v|x        这些你都懂的
+06
+shift + cmd + v  调出IDEA寄存器中保存的最近复制的N份内容，可选择性粘贴
+07
+cmd + /                注释/取消注释
+08
+cmd + w               选中当前光标所在的字
+09
+shift + cmd + enter 神器，补全当前行，最常用的场景时补全当前行后的；号，并将光标定位到下一行
+10
+cmd + O              overide 方法
+11
+cmd + I                implement 方法
+12
+其实上面两个快捷键很少用，因为有alt + enter 可完全替换掉这两个快捷键的功能
+13
+shift + cmd + L                   格式化代码
+14
+shift + cmd + O                   static import
+15
+shift + cmd + up/down    将当前代码段上/下移
+16
+shift + alt + up/down       将当前行上/下移
+17
+ 
+18
+重构的快捷键
+19
+ 
+20
+F6 移动文件到其它地方
+21
+F5 拷贝文件到其它地方
+22
+IDEA的移动文件功能非常强大，会将所有的使用该文件的类和XML配置中的类路径全部更新为新的路径。
+23
+shift + F6              改名
+24
+cmd + F6                修改方法签名
+25
+shift + cmd + F6    修改参数的类型
+26
+shift + cmd + v       引入一个局部变量
+27
+shift + cmd + p       引入一个参数
+28
+shift + cmd + f        引入一个类变量
+29
+shift + cmd + m      引入一个方法
+30
+shift + cmd + c        引入一个常量
+31
+
+alt + cmd + F7      查看某方法被调用的地方
+四、查看代码快捷键
+
+1
+cmd + p                  查询某方法的参数信息
+2
+cmd + b                  跳到调用方法的定义处
+3
+alt + cmd + b            跳到方法的实现处
+4
+cmd + u                  跳到方法在父类或接口的定义处
+5
+ctrl + up/down           跳到上/下一方法
+6
+alt + cmd + left/right   跳到上/下一次光标查看处
+7
+cmd + g                  跳到指定行
+8
+cmd + shift + h          显示方法的层级结构
+9
+alt + cmd + h            调用层级结构
+五、运行程序与Debug
+
+1
+shift + alt + F9                      debug模式运行程序
+2
+shift + alt + F10                     运行程序
+3
+F7                                    单步进入
+4
+F8                                    单步跳过
+5
+F9                                    跳过本次debug
+6
+alt + F8                              debug时执行选中的语句
+六、其它常用快捷键
+
+1
+cmd + ,                  调出setting界面
+2
+cmd + ;                  调出项目setting界面
+3
+cmd + f4                 关闭当前界面
+另外我自己还定制了几个svn相关的快捷键
+
+1
+cmd + alt + ctrl + a         svn add
+2
+cmd + alt + ctrl + u         svn update
+3
+cmd + alt + ctrl + m         svn commit
+4
+cmd + alt + ctrl + h         svn history
+5
+cmd + alt + ctrl + c         svn compare
+6
+cmd + alt + ctrl + p         将当前编辑界面的内容垂直分屏，在比对文件时非常好用
+
+
+
+优化
+1. IDEA内存优化 --13以后貌似是自动根据你电脑配置配置了
+先看看你机器本身的配置而配置. 
+\IntelliJ IDEA 8\bin\idea.exe.vmoptions 
+----------------------------------------- 
+-Xms64m 
+-Xmx256m 
+-XX:MaxPermSize=92m 
+-ea 
+-server 
+-Dsun.awt.keepWorkingSetOnMinimize=true
+  
+
+重要的设置
+
+
+
+不编译某个MODULES的方法，但在视图上还是有显示
+
+SETTINGS -> COMPILER -> EXCLUDES ->
+MODULES SETTINGS -> (选择你的MODULE) -> SOURCES -> EXCLUDED -> 整个工程文件夹
+FILE -> SETTINGS -> FILE ENCODINGS -> IDE ENCODING
+FILE -> SETTINGS -> FILE ENCODINGS -> DEFAULT ENCODING FOR PROPERTIES FILES
+FILE -> SETTINGS -> COMPILER -> JAVA COMPILER -> ADDITIONAL COMMAND LINE PARAMETERS
+FILE -> SETTINGS -> RESOURCE PATTERNS
+FILE -> SETTINGS -> EDITOR COLORS & FONTS -> FONT -> SIZE
+FILE -> SETTINGS -> KEYMAP -> MAIN MENU -> CODE -> COMPLETE CODE -> BASIC
+FILE -> SETTINGS -> FILE TYPES -> IGNORE FILES...
+下边是我过滤的类型,区分大小写的
+CVS;SCCS;RCS;rcs;.DS_Store;.svn;.pyc;.pyo;*.pyc;*.pyo;.git;*.hprof;_svn;.sbas;.IJI.*;vssver.scc;vssver2.scc;.*;*.iml;*.ipr;*.iws;*.ids
+在编辑的所选文件按ALT+F1, 然后选择PROJECT VIEW
+同时我们选择"Save files automatically", 并将其设置为30秒，这样IDEA依然可以自动保持文件,所以在每次切换时，你需要按下Ctrl+S保存文件
+如何让IntelliJ IDEA动的时候不打开工程文件：Settings->General去掉Reopen last project on startup
+—————————————–
+在IDEA中，你需要做以下设置, 这样被修改的文件会以*号标识出来，你可以及时保存相关的文件。"Mark modifyied tabs with asterisk"
+
+4.显示行号 
+如何显示行号：Settings->Editor->Appearance标签项，勾选Show line numbers
+
+5.自定义键盘快捷方式 
+如果默认代码提示和补全快捷键跟输入法冲突，如何解决：Settings->Keymap
+
+6.如何让光标不随意定位 
+Settings->Editor中去掉Allow placement of caret after end of line。
+7.中文乱码问题
+File菜单->Settings->Colors & Fonts->Editor Font=宋体, size=12, line spacing =1.0
+Settings->Appearance中勾选Override default fonts by (not recommended)，设置Name:NSimSun，Size:12
+----------------------------------------- 
+取消“Synchronize file on frame activation”和“Save files on framedeactivation”的选择 
+同时我们选择"Save files automatically", 并将其设置为30秒，这样IDEA依然可以自动保持文件,所以在每次切换时，你需要按下Ctrl+S保存文件。 
+如何让IntelliJ IDEA动的时候不打开工程文件：Settings->General去掉Reopen last project on startup 
+Editor --> Editor Tabs 
+----------------------------------------- 
+在IDEA中，你需要做以下设置, 这样被修改的文件会以*号标识出来，你可以及时保存相关的文件。 
+"Mark modifyied tabs with asterisk" 
+如何显示行号：Settings->Editor->Appearance标签项，勾选Show line numbers 
+默认代码提示和补全快捷键跟输入法冲突，如何解决：Settings->Keymap 
+如何让光标不随意定位：Settings->Editor中去掉Allow placement of caret after end of line 
+ 
+
+不编译某个MODULES，并且不显示在视图上
+
+ 
+
+
+IDEA编码设置3步曲
+
+加上参数 -ENCODING UTF-8 编译GROOVY文件的时候如果不加，STRING S = "中文"; 这样的GROOVY文件编译不过去.
+
+
+
+编译中添加其他类型文件比如 *.TXT *.INI
+
+ 
+
+
+改变编辑文本字体大小
+
+ 
+
+
+修改智能提示快捷键 
+
+ 
+
+
+显示文件过滤
+
+
+在PROJECT窗口中快速定位,编辑窗口中的文件
+
+------------------------------------------------------------------------------------------------------------
+
+
+2.优化文件保存和工程加载
+ 
+取消“Synchronize file on frame activation”（同步文件功能，酌情考虑可以不取消）
+取消“Save files on framedeactivation”的选择
+ 
+3.用*标识编辑过的文件
+ 
+Editor –> Editor Tabs
+
+Settings-> File Encondings 选择 IDE Encoding为GBK。
+ 
+在包含中文文件名或者文件夹的时候会出现??的乱码，解决方法如下：
+ 
+8.取消单词拼写检查
+设置-》搜索Typo 取消勾选
+在 Inspections—>Spelling->Typo 取消选中
